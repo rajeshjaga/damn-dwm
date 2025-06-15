@@ -30,7 +30,6 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
         "feh", "--bg-scale", "/home/jraj/Downloads/anime_skull.png", NULL,
-        "dunst", "-startup_notification", NULL,
         "picom", NULL,
         "nm-applet", NULL,
         "slstatus", NULL,
@@ -122,7 +121,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 };
 
 /* button definitions */

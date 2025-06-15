@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=DWM
+Exec=dwm
+Comment=Suckless's DMW
+Type=XSession
+
