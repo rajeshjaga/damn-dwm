@@ -12,7 +12,7 @@
 /* done dwm-preventfocusshift-20240831-6.5.diff*/
 /* done dwm-swallow-6.3.diff */
 /* done dwm-systray-20230922-9f88553.diff */
-/* done dwm-xrdb-6.4.diff */
+/* */
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
