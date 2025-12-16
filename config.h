@@ -60,7 +60,7 @@ static const char *const autostart[] = {
         "dunst", "-c", "$HOME/.config/dunst/dunstrc", "-startup-notification", "&", NULL,
         "picom", NULL,
         "flameshot", NULL,
-        "wal", "-i", "/home/jraj/Pictures/wally/forest.jpg", NULL,
+        "wal", "-i", "/home/jraj/Pictures/wallies/wall_16.jpg", NULL,
         "slstatus", NULL,
 	NULL /* terminate */
 };
@@ -75,8 +75,8 @@ static const Rule rules[] = {
 	 */
 	/* class                instance        title                         tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "firefox",            NULL,           NULL,                          1,         0,          0,          -1,         1 },
-	{ "zen",                NULL,           "Picture-in-Picture",          0,         1,          0,          -1,         1 },
-	{ "zen",                NULL,           NULL,                          1,         0,          0,          -1,         1 },
+	{ "zen",                "Toolkit",      "Picture-in-Picture",          1 << 8,         1,          0,          -1,         -1 },
+	{ "zen",                NULL,           NULL,                          1,         0,          0,          -1,         0 },
 	{ NULL,                 NULL,           "Event Tester",                0,         0,          0,           1,        -1 }, /* xev */
 };
 
