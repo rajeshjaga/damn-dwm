@@ -75,8 +75,10 @@ static const Rule rules[] = {
 	 */
 	/* class                instance        title                         tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "firefox",            NULL,           NULL,                          1,         0,          0,          -1,         1 },
-	{ "zen",                "Toolkit",      "Picture-in-Picture",          0,         1,          0,          -1,         -1 },
-	{ "zen",                NULL,           NULL,                          1,         0,          0,          -1,         0 },
+	{ "zen",                "Toolkit",      "Picture-in-Picture",          0,         1,          0,          -1,         1 },
+        { "Minecraft",          NULL,           NULL,                          0,         0,          0,          -1,         1 },
+        { "kitty",              NULL,           NULL,                          1,         0,          1,          -1,         0 },
+	{ "zen",                NULL,           NULL,                          1,         0,          0,          -1,         1 },
 	{ NULL,                 NULL,           "Event Tester",                0,         0,          0,           1,        -1 }, /* xev */
 };
 
@@ -137,6 +139,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_v,      spawn,          SHCMD ("/home/jraj/.config/scripts/volumeswitch.sh") },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          SHCMD ("pavucontrol") },
+        { MODKEY|ShiftMask,             XK_x,      spawn,          SHCMD("systemctl suspend && betterlockscreen -l") },
 
 	{ MODKEY,                       XK_i,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

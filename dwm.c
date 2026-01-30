@@ -426,10 +426,12 @@ applyrules(Client *c)
 			c->isterminal = r->isterminal;
 			c->noswallow  = r->noswallow;
 			c->isfloating = r->isfloating;
-			c->tags |= r->tags;
+                        if(r->tags)
+                            c->tags = r->tags;
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
 				c->mon = m;
+                        break;
 		}
 	}
 	if (ch.res_class)
@@ -437,6 +439,27 @@ applyrules(Client *c)
 	if (ch.res_name)
 		XFree(ch.res_name);
 	c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];
+        /* custom PiP placement */
+        if (c->isfloating
+            && c->mon
+            && strstr(c->name, "Picture-in-Picture")
+            && strstr(class, "zen")) {
+
+            int w = 480;
+            int h = 270;
+            int mx = c->mon->wx;
+            int my = c->mon->wy;
+            int mw = c->mon->ww;
+            int mh = c->mon->wh;
+
+            int x = mx + mw - w;
+            int y = my + mh - h;
+
+            c->x = x;
+            c->y = y;
+            c->w = w;
+            c->h = h;
+        }
 }
 
 int
